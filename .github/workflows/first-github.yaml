@@ -1,0 +1,17 @@
+name: My GitHub first workflow
+on: 
+  push:
+    branches:
+      - main
+env:
+  PROJECT_NAME: githubactions-Demo
+  COURSE: LLMOps-by-Manifold-AI-Learning
+jobs:
+  myexamplejob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Check out the repo"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - run: printenv
+      - run: echo "This is the env ${{ env.PROJECT_NAMJE }} and ${{ env.COURSE }}"
